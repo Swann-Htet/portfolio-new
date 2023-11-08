@@ -126,23 +126,10 @@ section {
 
 .switch-dn {
     right: 0;
-    padding-right: 15px;
-    z-index: 999;
-}
+    padding-top: 5px;
+    padding-left: 15px;
+    width: 999;
 
-.icon-container {
-    padding-top: .1rem;
-    position: relative;
-}
-.icon-day {
-    position: absolute;
-    left: 14.5%;
-    color: var(--fourth-color);
-}
-.icon-night {
-    position: absolute;
-    left: 58%;
-    color: var(--fourth-color);
 }
 
 input:checked + .slider {
