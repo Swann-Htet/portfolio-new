@@ -62,9 +62,14 @@
             <div class="switch-dn position-absolute">
                 <label class="switch">
                     <input type="checkbox" id="modeToggle">
-                    <span class="slider round"></span>
+                    <span class="slider round">
+                        <div class="icon-container">
+                            <div class="icon-day">&#9728;</div>
+                            <div class="icon-night">&#9790;</div>
+                        </div>
+                    </span>
                 </label>
-            </div>
+            </div>                  
         </nav>
     </header>
     
@@ -675,9 +680,9 @@
 
         modeToggle.addEventListener('change', () => {
             if (modeToggle.checked) {
-                enableDarkMode();
-            } else {
                 enableLightMode();
+            } else {
+                enableDarkMode();
             }
         });
 
