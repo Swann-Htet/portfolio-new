@@ -126,8 +126,10 @@ section {
 
 .switch-dn {
     right: 0;
+    padding-top: 5px;
     padding-left: 15px;
     width: 999;
+
 }
 
 input:checked + .slider {
