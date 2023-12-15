@@ -686,22 +686,23 @@
 
         
         function enableDarkMode() {
-            document.body.classList.remove('dark-mode');
-            elementsWithPattern.forEach(element => {
-                element.classList.remove('dark-pattern');
-            });
-            sections.forEach(section => {
-                section.classList.remove('dark-pattern-section');
-            });
-        }
-
-        function enableLightMode() {
             document.body.classList.add('dark-mode');
             elementsWithPattern.forEach(element => {
                 element.classList.add('dark-pattern');
             });
             sections.forEach(section => {
                 section.classList.add('dark-pattern-section');
+            });
+        }
+
+        function enableLightMode() {
+            
+            document.body.classList.remove('dark-mode');
+            elementsWithPattern.forEach(element => {
+                element.classList.remove('dark-pattern');
+            });
+            sections.forEach(section => {
+                section.classList.remove('dark-pattern-section');
             });
         }
 
