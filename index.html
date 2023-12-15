@@ -51,25 +51,21 @@
                   <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="#projects">Projects</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#contact">Contact</a>
-                  </li>
-                  <li>
-                    <div class="nav-item switch-dn">
-                        <label class="switch">
-                            <input type="checkbox" id="modeToggle">
-                            <span class="slider">
-                            </span>
-                        </label>
-                    </div>    
-                  </li>
+            
                 </ul>
 
                  
               </div>
+              
             </div>
 
-                         
+            <div class="nav-item switch-dn w-100 position-absolute">
+                <label class="switch d-flex">
+                    <input type="checkbox" id="modeToggle">
+                    <span class="slider">
+                    </span>
+                </label>
+            </div>       
         </nav>
     </header>
     
@@ -670,9 +666,9 @@
 
         modeToggle.addEventListener('change', () => {
             if (modeToggle.checked) {
-                enableDarkMode();
-            } else {
                 enableLightMode();
+            } else {
+                enableDarkMode();
             }
         });
 
