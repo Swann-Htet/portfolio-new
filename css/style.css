@@ -1252,6 +1252,10 @@ input:checked + .slider:before {
     transform: scale(1.05);
     border-color: #fff9;
 }
+
+#contact .button a {
+    text-decoration: none;
+}
   
 #contact .button:hover .icon {
     transform: translate(4px);
@@ -1535,6 +1539,15 @@ input:checked + .slider:before {
         text-align: left;
         font-weight: 600;
         color: var(--third-color);
+    }
+
+    /* Contact */
+    #contact h3 {
+        font-size: .8rem;
+    }
+
+    #contact .button {
+        margin-top: 1rem;
     }
     
     /* Experience */
