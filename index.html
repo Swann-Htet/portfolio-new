@@ -668,7 +668,13 @@
         const elementsWithPattern = document.querySelectorAll('.pattern-background');
         const sections = document.querySelectorAll('section');
         
-        enableDarkMode();
+        document.body.classList.remove('dark-mode');
+            elementsWithPattern.forEach(element => {
+                element.classList.remove('dark-pattern');
+            });
+            sections.forEach(section => {
+                section.classList.remove('dark-pattern-section');
+            });
 
         modeToggle.addEventListener('change', () => {
             if (modeToggle.checked) {
@@ -677,6 +683,17 @@
                 enableDarkMode();
             }
         });
+
+        
+        function enableDarkMode() {
+            document.body.classList.remove('dark-mode');
+            elementsWithPattern.forEach(element => {
+                element.classList.remove('dark-pattern');
+            });
+            sections.forEach(section => {
+                section.classList.remove('dark-pattern-section');
+            });
+        }
 
         function enableLightMode() {
             document.body.classList.add('dark-mode');
@@ -688,15 +705,7 @@
             });
         }
 
-        function enableDarkMode() {
-            document.body.classList.remove('dark-mode');
-            elementsWithPattern.forEach(element => {
-                element.classList.remove('dark-pattern');
-            });
-            sections.forEach(section => {
-                section.classList.remove('dark-pattern-section');
-            });
-        }
+        
 
         // Check for user's preference for dark mode
         const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
