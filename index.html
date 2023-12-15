@@ -678,9 +678,9 @@
 
         modeToggle.addEventListener('change', () => {
             if (modeToggle.checked) {
-                enableLightMode();
-            } else {
                 enableDarkMode();
+            } else {
+                enableLightMode();
             }
         });
 
@@ -696,7 +696,6 @@
         }
 
         function enableLightMode() {
-            
             document.body.classList.remove('dark-mode');
             elementsWithPattern.forEach(element => {
                 element.classList.remove('dark-pattern');
