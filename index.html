@@ -710,9 +710,9 @@
         // Check for user's preference for dark mode
         const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
         if (prefersDarkMode.matches) {
-            enableDarkMode();
-        } else {
             enableLightMode();
+        } else {
+            enableDarkMode();
         }
     </script>
 
