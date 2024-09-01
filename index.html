@@ -54,15 +54,6 @@
                   <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="#contact">Contact</a>
                   </li>
-                  <li>
-                    <div class="nav-item switch-dn">
-                        <label class="switch">
-                            <input type="checkbox" id="modeToggle">
-                            <span class="slider">
-                            </span>
-                        </label>
-                    </div>    
-                  </li>
                 </ul>
 
                  
@@ -663,58 +654,7 @@
             <span class="text-light">Copyright &copy; Swan Htet. All right reserved.</span>
         </div>
     </footer>
-    <script>
-        const modeToggle = document.getElementById('modeToggle');
-        const elementsWithPattern = document.querySelectorAll('.pattern-background');
-        const sections = document.querySelectorAll('section');
         
-        document.body.classList.remove('dark-mode');
-            elementsWithPattern.forEach(element => {
-                element.classList.remove('dark-pattern');
-            });
-            sections.forEach(section => {
-                section.classList.remove('dark-pattern-section');
-            });
-
-        modeToggle.addEventListener('change', () => {
-            if (modeToggle.checked) {
-                enableDarkMode();
-            } else {
-                enableLightMode();
-            }
-        });
-
-        
-        function enableDarkMode() {
-            document.body.classList.add('dark-mode');
-            elementsWithPattern.forEach(element => {
-                element.classList.add('dark-pattern');
-            });
-            sections.forEach(section => {
-                section.classList.add('dark-pattern-section');
-            });
-        }
-
-        function enableLightMode() {
-            document.body.classList.remove('dark-mode');
-            elementsWithPattern.forEach(element => {
-                element.classList.remove('dark-pattern');
-            });
-            sections.forEach(section => {
-                section.classList.remove('dark-pattern-section');
-            });
-        }
-
-        
-
-        // Check for user's preference for dark mode
-        const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
-        if (prefersDarkMode.matches) {
-            enableLightMode();
-        } else {
-            enableDarkMode();
-        }
-    </script>
 
     <script>
         /* -----------------------------------------------
