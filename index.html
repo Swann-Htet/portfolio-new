@@ -657,6 +657,67 @@
         
 
     <script>
+
+        document.addEventListener('keyup', function(event) {
+        // Prevent taking screenshots
+        if (event.key === 'PrintScreen') {
+            setTimeout(function(){
+                navigator.clipboard.writeText(''); // Clear clipboard to prevent screenshot
+                logWarning();
+                alert("Screenshots are disabled on this page.");
+            }, 100);
+        }
+    });
+
+    document.addEventListener('contextmenu', function(event) {
+        event.preventDefault();
+        logWarning();
+        alert("Right-click is disabled on this page.");
+    });
+
+    function isMobileDevice() {
+        return /Mobi|Android/i.test(navigator.userAgent);
+    }
+
+    if (isMobileDevice()) {
+        // Disable long press to prevent context menu on mobile
+        document.addEventListener('contextmenu', function(event) {
+            event.preventDefault();
+            logWarning();
+            alert("Context menu is disabled on this page.");
+        });
+
+        // Disable text selection (to prevent copy-paste) on mobile
+        document.addEventListener('selectstart', function(event) {
+            event.preventDefault();
+            logWarning();
+        });
+
+        // Disable touch-and-hold actions to prevent copying content or triggering the context menu
+        document.addEventListener('touchstart', function(event) {
+            if (event.touches.length > 1) {
+                event.preventDefault();
+                logWarning();
+            }
+        }, { passive: false });
+
+        // Disable zooming (pinch-to-zoom) on mobile
+        document.addEventListener('gesturestart', function(event) {
+            event.preventDefault();
+            logWarning();
+        });
+
+        // Optionally: Disable double-tap zooming
+        var lastTouchEnd = 0;
+        document.addEventListener('touchend', function(event) {
+            var now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+                logWarning();
+            }
+            lastTouchEnd = now;
+        }, false);
+    }
         /* -----------------------------------------------
 /* Author : Vincent Garreau  - vincentgarreau.com
 /* MIT license: http://opensource.org/licenses/MIT
